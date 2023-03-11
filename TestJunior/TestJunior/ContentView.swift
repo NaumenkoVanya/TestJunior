@@ -9,77 +9,83 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+    
+    @State private var firstName: String = ""
+    @State private var lastName: String = ""
+    @State private var email: String = ""
+    @State private var password: String = ""
+    @State private var isAuthorized: Bool = false
 
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
-
-    var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
+    
+    var body: some View{
+        VStack {
+            Text("Sing in")
+                .font(.title)
+            TextField("First name", text: $firstName)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            TextField("Last name", text: $lastName)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            TextField("Email", text: $email)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            Button(action: {
+                if !firstName.isEmpty,
+                   !lastName.isEmpty,
+                   !email.isEmpty {
+                    
+                    isAuthorized = true
                 }
-                .onDelete(perform: deleteItems)
+            }, label: {
+                Text("Sing in")
+                    .frame(height: 50)
+                    .padding(.horizontal, 155)
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(20)
+            })
+            Button(action: {
+            }) {
+                HStack{
+                    Text("Already have an account?")
+                        .foregroundColor(.gray)
+                    Text("Long in")
+                }
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+            Button(action: {
+            }) {
+                HStack{
+                    Image("iconGoogle")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                    Text("Sing in with Google")
+                        .foregroundColor(.black)
                 }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
+                .padding()
             }
-            Text("Select an item")
+            Button(action: {
+            }) {
+                HStack{
+                    Image("iconApple")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                    Text("Sing in with Apple")
+                        .foregroundColor(.black)
+                }
+                .padding()
+            }
+            
+            
+            
+            
         }
     }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
+    
+    
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

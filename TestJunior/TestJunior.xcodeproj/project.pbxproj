@@ -16,6 +16,7 @@
 		CA7B979929BCBC2700C950B7 /* TestJuniorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7B979829BCBC2700C950B7 /* TestJuniorTests.swift */; };
 		CA7B97A329BCBC2700C950B7 /* TestJuniorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7B97A229BCBC2700C950B7 /* TestJuniorUITests.swift */; };
 		CA7B97A529BCBC2700C950B7 /* TestJuniorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7B97A429BCBC2700C950B7 /* TestJuniorUITestsLaunchTests.swift */; };
+		CA94FDB029BF6F6700962FE4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA94FDAF29BF6F6700962FE4 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		CA7B979E29BCBC2700C950B7 /* TestJuniorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestJuniorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA7B97A229BCBC2700C950B7 /* TestJuniorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestJuniorUITests.swift; sourceTree = "<group>"; };
 		CA7B97A429BCBC2700C950B7 /* TestJuniorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestJuniorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CA94FDAF29BF6F6700962FE4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				CA7B978129BCBC2600C950B7 /* TestJuniorApp.swift */,
 				CA7B978329BCBC2600C950B7 /* ContentView.swift */,
+				CA94FDAF29BF6F6700962FE4 /* LoginView.swift */,
 				CA7B978529BCBC2700C950B7 /* Assets.xcassets */,
 				CA7B978A29BCBC2700C950B7 /* Persistence.swift */,
 				CA7B978F29BCBC2700C950B7 /* Info.plist */,
@@ -268,6 +271,7 @@
 				CA7B978B29BCBC2700C950B7 /* Persistence.swift in Sources */,
 				CA7B978429BCBC2600C950B7 /* ContentView.swift in Sources */,
 				CA7B978E29BCBC2700C950B7 /* TestJunior.xcdatamodeld in Sources */,
+				CA94FDB029BF6F6700962FE4 /* LoginView.swift in Sources */,
 				CA7B978229BCBC2600C950B7 /* TestJuniorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

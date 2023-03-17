@@ -84,6 +84,54 @@ struct Page1View: View {
                     .background(Color.gray)
                     .clipShape(Circle())
                 }).padding()
+                HStack {
+                    TabView {
+                        ForEach(1 ... 10, id: \.self) { index in
+                            Color.blue
+                                .frame(width: 130)
+                                .cornerRadius(10)
+                                .overlay(
+                                    Text("Page \(index)")
+                                        .font(.body)
+                                        .foregroundColor(.white)
+                                )
+                        }
+                    }
+                    .tabViewStyle(PageTabViewStyle())
+                    .frame(width: 130, height: 170)
+                }
+                HStack {
+                    TabView {
+                        ForEach(1 ... 10, id: \.self) { index in
+                            Color.blue
+                                .frame(width: 170)
+                                .cornerRadius(10)
+                                .overlay(
+                                    Text("Page \(index)")
+                                        .font(.body)
+                                        .foregroundColor(.white)
+                                )
+                        }
+                    }
+                    .tabViewStyle(PageTabViewStyle())
+                    .frame(width: 170, height: 170)
+                }
+                HStack {
+                    TabView {
+                        ForEach(1 ... 10, id: \.self) { index in
+                            Color.blue
+                                .frame(width: 130)
+                                .cornerRadius(10)
+                                .overlay(
+                                    Text("Page \(index)")
+                                        .font(.body)
+                                        .foregroundColor(.white)
+                                )
+                        }
+                    }
+                    .tabViewStyle(PageTabViewStyle())
+                    .frame(width: 130, height: 170)
+                }
                 Spacer()
             }
         }

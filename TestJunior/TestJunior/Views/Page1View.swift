@@ -7,11 +7,90 @@
 
 import SwiftUI
 
+// MARK: - Page1View
+
 struct Page1View: View {
+    @State private var lookingFor = ""
+
     var body: some View {
-        Text("Page 1")
+        NavigationView {
+            VStack {
+                ZStack {
+                    Button(action: {}) {
+                        Image(systemName: "1.circle")
+                    }.padding(.trailing, 300)
+                    Text("Trade by data").padding(.horizontal)
+                    Button(action: {}) {
+                        Image(systemName: "2.circle")
+                    }.padding(.leading, 300)
+                }
+                HStack {
+                    TextField("What are you looking for?", text: $lookingFor).overlay(Image(systemName: "magnifyingglass").padding(.leading, 280)
+                        .foregroundColor(.gray))
+                        .padding(5)
+                        .background(Color(CGColor(red: 0.1, green: 0.2, blue: 0.3, alpha: 1)).opacity(0.1))
+                        .cornerRadius(30)
+                        .padding(.horizontal, 40)
+                        .multilineTextAlignment(.center)
+                        .padding(.top, 20)
+                }
+                HStack(alignment: .top, spacing: 3, content: {
+                    Button(action: {}) {
+                        Image("iconSmartPhone")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                    }
+                    .padding()
+                    .background(Color.gray)
+                    .clipShape(Circle())
+                    Button(action: {}) {
+                        Image("iconHeadPhones")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                    }
+                    .padding()
+                    .background(Color.gray)
+                    .clipShape(Circle())
+                    Button(action: {}) {
+                        Image("iconGame")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                    }
+                    .padding()
+                    .background(Color.gray)
+                    .clipShape(Circle())
+                    Button(action: {}) {
+                        Image("iconCar")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                    }
+                    .padding()
+                    .background(Color.gray)
+                    .clipShape(Circle())
+                    Button(action: {}) {
+                        Image("iconFurniture")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                    }
+                    .padding()
+                    .background(Color.gray)
+                    .clipShape(Circle())
+                    Button(action: {}) {
+                        Image("iconRobot")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                    }
+                    .padding()
+                    .background(Color.gray)
+                    .clipShape(Circle())
+                }).padding()
+                Spacer()
+            }
+        }
     }
 }
+
+// MARK: - Page1View_Previews
 
 struct Page1View_Previews: PreviewProvider {
     static var previews: some View {

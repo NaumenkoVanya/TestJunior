@@ -35,15 +35,18 @@ struct Page1View: View {
                         .padding(.top, 20)
                 }
                 HStack(alignment: .top, spacing: 3, content: {
-                    Button(action: {}) {
-                        Image("iconSmartPhone")
-                            .resizable()
-                            .frame(width: 30, height: 30)
+                    VStack {
+                        Button(action: {}) {
+                            Image("iconSmartPhone")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                        }
+                        .padding()
+                        .background(Color.gray)
+                        .clipShape(Circle())
+                        Text("Phones")
                     }
-                    .padding()
-                    .background(Color.gray)
-                    .clipShape(Circle())
-                    Button(action: {}) {
+                    VStack(alignment: .leading) { Button(action: {}) {
                         Image("iconHeadPhones")
                             .resizable()
                             .frame(width: 30, height: 30)
@@ -51,7 +54,10 @@ struct Page1View: View {
                     .padding()
                     .background(Color.gray)
                     .clipShape(Circle())
-                    Button(action: {}) {
+                    Text("Head")
+                    }
+
+                    VStack { Button(action: {}) {
                         Image("iconGame")
                             .resizable()
                             .frame(width: 30, height: 30)
@@ -59,7 +65,10 @@ struct Page1View: View {
                     .padding()
                     .background(Color.gray)
                     .clipShape(Circle())
-                    Button(action: {}) {
+                    Text("Games")
+                    }
+
+                    VStack { Button(action: {}) {
                         Image("iconCar")
                             .resizable()
                             .frame(width: 30, height: 30)
@@ -67,7 +76,10 @@ struct Page1View: View {
                     .padding()
                     .background(Color.gray)
                     .clipShape(Circle())
-                    Button(action: {}) {
+                    Text("Car")
+                    }
+
+                    VStack { Button(action: {}) {
                         Image("iconFurniture")
                             .resizable()
                             .frame(width: 30, height: 30)
@@ -75,7 +87,10 @@ struct Page1View: View {
                     .padding()
                     .background(Color.gray)
                     .clipShape(Circle())
-                    Button(action: {}) {
+                    Text("Furniture")
+                    }
+
+                    VStack { Button(action: {}) {
                         Image("iconRobot")
                             .resizable()
                             .frame(width: 30, height: 30)
@@ -83,56 +98,133 @@ struct Page1View: View {
                     .padding()
                     .background(Color.gray)
                     .clipShape(Circle())
+                    Text("Kids")
+                    }
+
                 }).padding()
-                HStack {
-                    TabView {
-                        ForEach(1 ... 10, id: \.self) { index in
-                            Color.blue
-                                .frame(width: 130)
-                                .cornerRadius(10)
-                                .overlay(
-                                    Text("Page \(index)")
-                                        .font(.body)
-                                        .foregroundColor(.white)
-                                )
+
+                ScrollView {
+                    HStack {
+                        TabView {
+                            ForEach(1 ... 10, id: \.self) { index in
+                                Color.gray
+                                    .frame(width: 120)
+                                    .cornerRadius(10)
+                                    .overlay(
+                                        Text("Page \(index)")
+                                            .font(.body)
+                                            .foregroundColor(.white)
+                                    )
+                            }
                         }
-                    }
-                    .tabViewStyle(PageTabViewStyle())
-                    .frame(width: 130, height: 170)
-                }
-                HStack {
-                    TabView {
-                        ForEach(1 ... 10, id: \.self) { index in
-                            Color.blue
-                                .frame(width: 170)
-                                .cornerRadius(10)
-                                .overlay(
-                                    Text("Page \(index)")
-                                        .font(.body)
-                                        .foregroundColor(.white)
-                                )
+                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                        .frame(width: 120, height: 150)
+                        TabView {
+                            ForEach(1 ... 10, id: \.self) { index in
+                                Color.gray
+                                    .frame(width: 120)
+                                    .cornerRadius(10)
+                                    .overlay(
+                                        Text("Page \(index)")
+                                            .font(.body)
+                                            .foregroundColor(.white)
+                                    )
+                            }
                         }
-                    }
-                    .tabViewStyle(PageTabViewStyle())
-                    .frame(width: 170, height: 170)
-                }
-                HStack {
-                    TabView {
-                        ForEach(1 ... 10, id: \.self) { index in
-                            Color.blue
-                                .frame(width: 130)
-                                .cornerRadius(10)
-                                .overlay(
-                                    Text("Page \(index)")
-                                        .font(.body)
-                                        .foregroundColor(.white)
-                                )
+                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                        .frame(width: 120, height: 150)
+                        TabView {
+                            ForEach(1 ... 10, id: \.self) { index in
+                                Color.gray
+                                    .frame(width: 120)
+                                    .cornerRadius(10)
+                                    .overlay(
+                                        Text("Page \(index)")
+                                            .font(.body)
+                                            .foregroundColor(.white)
+                                    )
+                            }
                         }
+                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                        .frame(width: 120, height: 150)
                     }
-                    .tabViewStyle(PageTabViewStyle())
-                    .frame(width: 130, height: 170)
-                }
-                Spacer()
+                    HStack {
+                        TabView {
+                            ForEach(1 ... 10, id: \.self) { index in
+                                Color.gray
+                                    .frame(width: 180)
+                                    .cornerRadius(10)
+                                    .overlay(
+                                        Text("Page \(index)")
+                                            .font(.body)
+                                            .foregroundColor(.white)
+                                    )
+                            }
+                        }
+                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                        .frame(width: 180, height: 250)
+                        TabView {
+                            ForEach(1 ... 10, id: \.self) { index in
+                                Color.gray
+                                    .frame(width: 180)
+                                    .cornerRadius(10)
+                                    .overlay(
+                                        Text("Page \(index)")
+                                            .font(.body)
+                                            .foregroundColor(.white)
+                                    )
+                            }
+                        }
+                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                        .frame(width: 180, height: 250)
+                    }
+            
+                    HStack {
+                        TabView {
+                            ForEach(1 ... 10, id: \.self) { index in
+                                Color.green
+                                    .frame(width: 120)
+                                    .cornerRadius(10)
+                                    .overlay(
+                                        Text("Page \(index)")
+                                            .font(.body)
+                                            .foregroundColor(.white)
+                                    )
+                            }
+                        }
+                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                        .frame(width: 120, height: 170)
+                        TabView {
+                            ForEach(1 ... 10, id: \.self) { index in
+                                Color.green
+                                    .frame(width: 120)
+                                    .cornerRadius(10)
+                                    .overlay(
+                                        Text("Page \(index)")
+                                            .font(.body)
+                                            .foregroundColor(.white)
+                                    )
+                            }
+                        }
+                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                        .frame(width: 120, height: 170)
+                        TabView {
+                            ForEach(1 ... 10, id: \.self) { index in
+                                Color.green
+                                    .frame(width: 120)
+                                    .cornerRadius(10)
+                                    .overlay(
+                                        Text("Page \(index)")
+                                            .font(.body)
+                                            .foregroundColor(.white)
+                                    )
+                            }
+                        }
+                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                        .frame(width: 120, height: 170)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }.scrollIndicators(ScrollIndicatorVisibility.never)
             }
         }
     }

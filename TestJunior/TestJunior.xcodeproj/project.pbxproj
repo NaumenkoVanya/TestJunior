@@ -105,8 +105,8 @@
 		CA7B978029BCBC2600C950B7 /* TestJunior */ = {
 			isa = PBXGroup;
 			children = (
-				CA8127E329C1D421006628F5 /* Views */,
 				CA8127E529C1D437006628F5 /* Models */,
+				CA8127E329C1D421006628F5 /* Views */,
 				CA7B978129BCBC2600C950B7 /* TestJuniorApp.swift */,
 				CA7B978529BCBC2700C950B7 /* Assets.xcassets */,
 				CA7B978A29BCBC2700C950B7 /* Persistence.swift */,

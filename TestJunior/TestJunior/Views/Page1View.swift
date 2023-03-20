@@ -11,6 +11,7 @@ import SwiftUI
 
 struct Page1View: View {
     @State private var lookingFor = ""
+    @State private var selection = 0
 
     var body: some View {
         NavigationView {
@@ -34,6 +35,9 @@ struct Page1View: View {
                         .multilineTextAlignment(.center)
                         .padding(.top, 20)
                 }
+
+                // MARK: Store category buttons
+
                 HStack(alignment: .top, spacing: 3, content: {
                     VStack {
                         Button(action: {}) {
@@ -104,6 +108,8 @@ struct Page1View: View {
                 }).padding()
 
                 ScrollView {
+                    // MARK: Data in the Latest block
+
                     HStack {
                         TabView {
                             ForEach(1 ... 10, id: \.self) { index in
@@ -148,6 +154,9 @@ struct Page1View: View {
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                         .frame(width: 120, height: 150)
                     }
+
+                    // MARK: Data in the Flash Sale block
+
                     HStack {
                         TabView {
                             ForEach(1 ... 10, id: \.self) { index in
@@ -178,7 +187,9 @@ struct Page1View: View {
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                         .frame(width: 180, height: 250)
                     }
-            
+
+                    // MARK: Data in the Brands block
+
                     HStack {
                         TabView {
                             ForEach(1 ... 10, id: \.self) { index in
@@ -225,6 +236,24 @@ struct Page1View: View {
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }.scrollIndicators(ScrollIndicatorVisibility.never)
+
+                // MARK: Tab Bar Button bottom
+         
+                TabView(selection: $selection) {
+                    Button("Button 1") {
+                        // action for button 1
+                    }
+                    .tabItem {
+                        Image(systemName: "circle.fill")
+                    }
+                    .tag(0)
+                    Button("fff") {
+
+                    }.tabItem {
+                        Image(systemName: "square.fill")
+                    }
+
+                }
             }
         }
     }

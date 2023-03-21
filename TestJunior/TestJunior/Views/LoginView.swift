@@ -79,8 +79,8 @@ struct LoginView: View {
     }
 
     func showErrorAlert(message: String) {
-            errorMessage = message
-            showErrorAlert = true
+        errorMessage = message
+        showErrorAlert = true
     }
 
     func isValidEmail(firstName: String) -> Bool {
@@ -91,16 +91,31 @@ struct LoginView: View {
         return true
     }
 }
+
+// MARK: - TabBarView
+
 struct TabBarView: View {
     var body: some View {
         TabView {
             Page1View()
                 .tabItem {
-                    Label("Page 1", systemImage: "1.circle")
+                    Image(systemName: "house")
                 }
             Page2View()
                 .tabItem {
-                    Label("Page 2", systemImage: "2.circle")
+                    Image(systemName: "heart")
+                }
+            Page2View()
+                .tabItem {
+                    Image(systemName: "basket")
+                }
+            Page2View()
+                .tabItem {
+                    Image(systemName: "message")
+                }
+            Page2View()
+                .tabItem {
+                    Image(systemName: "person")
                 }
         }
     }

@@ -236,24 +236,6 @@ struct Page1View: View {
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }.scrollIndicators(ScrollIndicatorVisibility.never)
-
-                // MARK: Tab Bar Button bottom
-         
-                TabView(selection: $selection) {
-                    Button("Button 1") {
-                        // action for button 1
-                    }
-                    .tabItem {
-                        Image(systemName: "circle.fill")
-                    }
-                    .tag(0)
-                    Button("fff") {
-
-                    }.tabItem {
-                        Image(systemName: "square.fill")
-                    }
-
-                }
             }
         }
     }

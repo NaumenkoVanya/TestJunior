@@ -15,7 +15,7 @@ struct LoginView: View {
     @State private var errorMessage = ""
     @State private var showTabBar = false
     @State private var showErrorAlert = false
-
+    
     var body: some View {
         VStack {
             Text("Welcome back")
@@ -36,7 +36,7 @@ struct LoginView: View {
                 .multilineTextAlignment(.center)
                 .padding(.top, 40)
                 .autocorrectionDisabled()
-
+                
             VStack {
                 Button {
                     login()
@@ -50,7 +50,7 @@ struct LoginView: View {
                         .cornerRadius(20)
                 }
             }.padding(.top, 80)
-
+                
         }.padding()
             .alert(isPresented: $showErrorAlert, content: {
                 Alert(title: Text("Error"), message: Text(errorMessage), dismissButton: .default(Text("OK")))
@@ -59,34 +59,34 @@ struct LoginView: View {
                 TabBarView()
             })
     }
-
+        
     func login() {
         if !isValidEmail(firstName: firstName) {
             showErrorAlert(message: "Invalid First name")
             return
         }
-
+            
         if password.count < 6 {
             showErrorAlert(message: "Password must be at least 6 characters")
             return
         }
-
+            
         if userExists(firstName: firstName, password: password) {
             showTabBar = true
         } else {
             showErrorAlert(message: "Invalid email or password")
         }
     }
-
+        
     func showErrorAlert(message: String) {
         errorMessage = message
         showErrorAlert = true
     }
-
+        
     func isValidEmail(firstName: String) -> Bool {
         return true
     }
-
+        
     func userExists(firstName: String, password: String) -> Bool {
         return true
     }

@@ -9,7 +9,28 @@ import SwiftUI
 
 struct PagePerson: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                Text("Profile")
+                    .font(.system(size: 20))
+                    .bold()
+                    .padding()
+                Image(systemName: "person.fill")
+                
+                Button(action: {
+                    
+                }) {
+                    Image(systemName: "creditcard")
+                    Text("Trade store")
+                    
+                    Image(systemName: "plus")
+                }.frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .foregroundColor(.black)
+                    .bold()
+                    .font(.system(size: 25))
+                    
+            }
+        }
     }
 }
 

@@ -9,7 +9,9 @@ import SwiftUI
 
 struct Page2View: View {
     var body: some View {
-        Text("Page 2")
+        Image(systemName: "heart")
+            .resizable()
+            .frame(width: 200, height: 200)
     }
 }
 

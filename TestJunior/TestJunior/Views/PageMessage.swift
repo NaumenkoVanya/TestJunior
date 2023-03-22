@@ -9,7 +9,10 @@ import SwiftUI
 
 struct PageMessage: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image(systemName: "message")
+            .resizable()
+            .frame(width: 200, height: 200)
+        
     }
 }
 

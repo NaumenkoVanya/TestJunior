@@ -105,15 +105,15 @@ struct TabBarView: View {
                 .tabItem {
                     Image(systemName: "heart")
                 }
-            Page2View()
+            PageBasket()
                 .tabItem {
                     Image(systemName: "basket")
                 }
-            Page2View()
+            PageMessage()
                 .tabItem {
                     Image(systemName: "message")
                 }
-            Page2View()
+            PagePerson()
                 .tabItem {
                     Image(systemName: "person")
                 }

@@ -109,46 +109,89 @@ struct Page1View: View {
 
                 ScrollView {
                     // MARK: Data in the Latest block
-
+                    Text("Latest").padding(.trailing, 300)
+                        .font(.system(.title2))
+                        .bold()
                     HStack {
                         TabView {
-                            ForEach(1 ... 10, id: \.self) { index in
-                                Color.gray
-                                    .frame(width: 120)
-                                    .cornerRadius(10)
-                                    .overlay(
-                                        Text("Page \(index)")
-                                            .font(.body)
-                                            .foregroundColor(.white)
-                                    )
+                            ForEach(1 ... 10, id: \.self) { _ in
+                                Image(systemName: "plus")
+                                    .overlay {
+                                        Color.gray
+                                            .frame(width: 120, height: 150, alignment: .center)
+                                            .cornerRadius(10)
+                                            .opacity(0.1)
+                                        Button(action: {}) {
+                                            Image(systemName: "plus.circle")
+                                                .resizable()
+                                                .frame(width: 30, height: 30, alignment: .center)
+                                                .bold()
+                                                .foregroundColor(.black)
+                                        }.position(CGPoint(x: 100, y: 130))
+                                        Button(action: {}) {
+                                            Image(systemName: "heart")
+                                                .resizable()
+                                                .frame(width: 20, height: 20, alignment: .center)
+                                                .bold()
+                                                .foregroundColor(.black)
+                                        }.position(CGPoint(x: 70, y: 130))
+                                        Label("kids", image: "").position().offset(x: 20, y: 100).bold()
+                                            
+                                    }
                             }
                         }
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                         .frame(width: 120, height: 150)
                         TabView {
-                            ForEach(1 ... 10, id: \.self) { index in
-                                Color.gray
-                                    .frame(width: 120)
-                                    .cornerRadius(10)
-                                    .overlay(
-                                        Text("Page \(index)")
-                                            .font(.body)
-                                            .foregroundColor(.white)
-                                    )
+                            ForEach(1 ... 10, id: \.self) { _ in
+                                Image(systemName: "plus")
+                                    .overlay {
+                                        Color.brown
+                                            .frame(width: 120, height: 150, alignment: .center)
+                                            .cornerRadius(10)
+                                            .opacity(0.6)
+                                        Button(action: {}) {
+                                            Image(systemName: "plus.circle")
+                                                .resizable()
+                                                .frame(width: 30, height: 30, alignment: .center)
+                                                .bold()
+                                                .foregroundColor(.black)
+                                        }.position(CGPoint(x: 100, y: 130))
+                                        Button(action: {}) {
+                                            Image(systemName: "heart")
+                                                .resizable()
+                                                .frame(width: 20, height: 20, alignment: .center)
+                                                .bold()
+                                                .foregroundColor(.black)
+                                        }.position(CGPoint(x: 70, y: 130))
+                                    }
                             }
                         }
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                         .frame(width: 120, height: 150)
                         TabView {
-                            ForEach(1 ... 10, id: \.self) { index in
-                                Color.gray
-                                    .frame(width: 120)
-                                    .cornerRadius(10)
-                                    .overlay(
-                                        Text("Page \(index)")
-                                            .font(.body)
-                                            .foregroundColor(.white)
-                                    )
+                            ForEach(1 ... 10, id: \.self) { _ in
+                                Image(systemName: "plus")
+                                    .overlay {
+                                        Color.blue
+                                            .frame(width: 120, height: 150, alignment: .center)
+                                            .cornerRadius(10)
+                                            .opacity(0.2)
+                                        Button(action: {}) {
+                                            Image(systemName: "plus.circle")
+                                                .resizable()
+                                                .frame(width: 30, height: 30, alignment: .center)
+                                                .bold()
+                                                .foregroundColor(.black)
+                                        }.position(CGPoint(x: 100, y: 130))
+                                        Button(action: {}) {
+                                            Image(systemName: "heart")
+                                                .resizable()
+                                                .frame(width: 20, height: 20, alignment: .center)
+                                                .bold()
+                                                .foregroundColor(.black)
+                                        }.position(CGPoint(x: 70, y: 130))
+                                    }
                             }
                         }
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
@@ -156,7 +199,10 @@ struct Page1View: View {
                     }
 
                     // MARK: Data in the Flash Sale block
-
+                    Text("Sale block")
+                        .padding(.trailing, 260)
+                        .font(.system(.title2))
+                        .bold()
                     HStack {
                         TabView {
                             ForEach(1 ... 10, id: \.self) { index in
@@ -189,7 +235,9 @@ struct Page1View: View {
                     }
 
                     // MARK: Data in the Brands block
-
+                    Text("Brands").padding(.trailing, 300)
+                        .font(.system(.title2))
+                        .bold()
                     HStack {
                         TabView {
                             ForEach(1 ... 10, id: \.self) { index in

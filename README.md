@@ -12,17 +12,11 @@ ____
 ____
 + Login
 + Registration
-+ Sending and receiving posts to the server
-+ Location determination
 
 # App Arquitecture
 ____
-+ MVC
-+ UIKit 
-+ Firebase IOS SDK
-+ Firebase Realtime Database
-+ Firebase Authentication
-+ SafariServices
+
++ SwiftUI
 + Progress Hub
 
 ## Application ScreenShots
